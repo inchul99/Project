@@ -50,11 +50,7 @@ public class Login extends JPanel implements ActionListener {
 
 		add(passLabel);
 
-		passField = new RoundPF(10);
-		passField.setBounds(50, 483, 315, 40);
-		passField.setBackground(new Color(0xD9D9D9));
-		add(passField);
-
+		
 		// Remember me & Forgot password
 		rememberMe = new JCheckBox("Remember me");
 		rememberMe.setBounds(50, 543, 120, 20);
@@ -83,6 +79,19 @@ public class Login extends JPanel implements ActionListener {
 		registerButton.addActionListener(this);
 		add(registerButton);
 
+
+		// 준혁 버튼
+		registerButton = new RoundBT("준혁혁", 10);
+		registerButton.setBounds(230, 583, 135, 50);
+		registerButton.setBackground(Color.BLACK);
+		registerButton.setForeground(Color.WHITE);
+		registerButton.setFont(new Font("맑은 고딕", Font.BOLD, 14));
+		registerButton.addActionListener(this);
+		add(registerButton);
+
+
+
+
 		setVisible(true);
 	}
 
@@ -98,6 +107,8 @@ public class Login extends JPanel implements ActionListener {
 			} else {
 				JOptionPane.showMessageDialog(this, "로그인 실패! 아이디 또는 비밀번호를 확인하세요.", "로그인 실패", JOptionPane.ERROR_MESSAGE);
 			}*/
+
+			System.out.println("준혁 충돌 호출~~");
 		} else if (e.getSource() == registerButton) {
 			parent.showPanel("register");
 		}
